@@ -9,7 +9,10 @@
  */
 
 
-
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+pub struct BankTransactions {
+    pub transactions: BankTransactionStatusSchema,
+}
 
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct BankTransactionStatusSchema {

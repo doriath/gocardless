@@ -166,7 +166,7 @@ pub async fn retrieve_account_metadata(configuration: &configuration::Configurat
 }
 
 /// Access account transactions.  Transactions will be returned in Berlin Group PSD2 format.
-pub async fn retrieve_account_transactions(configuration: &configuration::Configuration, id: &str, date_from: Option<String>, date_to: Option<String>) -> Result<crate::models::BankTransactionStatusSchema, Error<RetrieveAccountTransactionsError>> {
+pub async fn retrieve_account_transactions(configuration: &configuration::Configuration, id: &str, date_from: Option<String>, date_to: Option<String>) -> Result<crate::models::BankTransactions, Error<RetrieveAccountTransactionsError>> {
     let local_var_configuration = configuration;
 
     let local_var_client = &local_var_configuration.client;

@@ -10,8 +10,10 @@
 
 /// Requisition : RequisitionSerializer.
 
+use serde_with::serde_as;
+use serde_with::NoneAsEmptyString;
 
-
+#[serde_as]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Requisition {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -28,6 +30,7 @@ pub struct Requisition {
     #[serde(rename = "institution_id")]
     pub institution_id: String,
     /// EUA associated with this requisition
+    #[serde_as(as = "NoneAsEmptyString")]
     #[serde(rename = "agreement", skip_serializing_if = "Option::is_none")]
     pub agreement: Option<uuid::Uuid>,
     /// additional ID to identify the end user

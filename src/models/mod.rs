@@ -16,6 +16,7 @@ pub mod balance_schema;
 pub use self::balance_schema::BalanceSchema;
 pub mod bank_transaction_status_schema;
 pub use self::bank_transaction_status_schema::BankTransactionStatusSchema;
+pub use self::bank_transaction_status_schema::BankTransactions;
 pub mod bt;
 pub use self::bt::Bt;
 pub mod cbct;

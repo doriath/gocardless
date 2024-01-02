@@ -46,7 +46,7 @@ pub struct TransactionSchema {
     #[serde(rename = "transactionAmount")]
     pub transaction_amount: Box<crate::models::TransactionAmountSchema>,
     #[serde(rename = "currencyExchange", skip_serializing_if = "Option::is_none")]
-    pub currency_exchange: Option<Vec<crate::models::CurrencyExchangeSchema>>,
+    pub currency_exchange: Option<crate::models::CurrencyExchangeSchema>,
     /// creditorName
     #[serde(rename = "creditorName", skip_serializing_if = "Option::is_none")]
     pub creditor_name: Option<String>,
