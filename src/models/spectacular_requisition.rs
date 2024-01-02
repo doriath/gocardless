@@ -10,8 +10,10 @@
 
 /// SpectacularRequisition : Create requisition.
 
+use serde_with::serde_as;
+use serde_with::NoneAsEmptyString;
 
-
+#[serde_as]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct SpectacularRequisition {
     #[serde(rename = "id", skip_serializing_if = "Option::is_none")]
@@ -29,6 +31,7 @@ pub struct SpectacularRequisition {
     pub institution_id: String,
     /// EUA associated with this requisition
     #[serde(rename = "agreement", skip_serializing_if = "Option::is_none")]
+    #[serde_as(as = "NoneAsEmptyString")]
     pub agreement: Option<uuid::Uuid>,
     /// additional ID to identify the end user
     #[serde(rename = "reference", skip_serializing_if = "Option::is_none")]
